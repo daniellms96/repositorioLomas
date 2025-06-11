@@ -50,7 +50,7 @@ Asegúrate de tener instaladas las siguientes herramientas:
 
 1.  **Clona el Repositorio**:
     ```bash
-    git clone [https://github.com/daniellms96/RavePass.git](https://github.com/daniellms96/repositorioLomas.git)
+    git clone [https://github.com/daniellms96/repositorioLomas.git](https://github.com/daniellms96/repositorioLomas.git)
     cd RavePass
     ```
 
