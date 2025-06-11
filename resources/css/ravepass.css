@@ -1,0 +1,393 @@
+/* Estilos base */
+body {
+    /* Fondo oscuro para la interfaz. */
+    background-color: black;
+    /* Color de texto claro para contraste. */
+    color: white;
+    /* Evita el scroll horizontal. */
+    overflow-x: hidden;
+}
+
+/* Efectos de texto */
+.neon-text {
+    /* Añade un sutil brillo de neón al texto. */
+    text-shadow: 
+        0 0 5px rgba(220, 38, 38, 0.5),
+        0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+.glitch-text {
+    /* Posiciona el elemento para la animación de glitch. */
+    position: relative;
+    /* Aplica la animación de glitch. */
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+    /* Define los estados de la animación glitch. */
+    2%, 64% {
+        transform: translate(1px, 0) skew(0deg);
+    }
+    4%, 60% {
+        transform: translate(-1px, 0) skew(0deg);
+    }
+    62% {
+        transform: translate(0, 0) skew(3deg);
+    }
+}
+
+/* Efectos de sombra */
+.shadow-glow {
+    /* Añade una sombra con efecto de brillo. */
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
+}
+
+/* Animaciones */
+.pulse-btn {
+    /* Aplica una animación de pulsación al botón. */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    /* Define los estados de la animación de pulsación. */
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+}
+
+.float-element {
+    /* Aplica una animación de flotación. */
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-element-reverse {
+    /* Aplica una animación de flotación inversa. */
+    animation: float-reverse 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    /* Define el movimiento de flotación. */
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes float-reverse {
+    /* Define el movimiento de flotación inverso. */
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Efectos de hover */
+.benefit-card {
+    /* Transiciones suaves para los efectos al pasar el ratón. */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    /* Eleva la tarjeta ligeramente al pasar el ratón. */
+    transform: translateY(-5px);
+}
+
+/* Fondos con gradientes */
+.bg-radial-gradient {
+    /* Aplica un gradiente radial. */
+    background-image: radial-gradient(circle at center, rgba(220, 38, 38, 0.1), transparent 70%);
+}
+
+.bg-radial-gradient-bottom {
+    /* Aplica un gradiente radial desde la parte inferior. */
+    background-image: radial-gradient(ellipse at bottom, rgba(220, 38, 38, 0.1), transparent 70%);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    /* Define el ancho de la barra de desplazamiento. */
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    /* Estilo del fondo de la barra de desplazamiento. */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    /* Estilo del "pulgar" de la barra de desplazamiento. */
+    background: rgba(220, 38, 38, 0.5);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* Estilo del "pulgar" al pasar el ratón. */
+    background: rgba(220, 38, 38, 0.8);
+}
+
+/* Animación para las tarjetas de beneficios */
+.benefit-card {
+    /* Estado inicial oculto y ligeramente desplazado. */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.benefit-card.visible {
+    /* Transición para hacer la tarjeta visible. */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Efecto de partículas */
+#particles-container {
+    /* Contenedor para las partículas, ocupa toda la pantalla. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Asegura que no bloquee los clics. */
+    pointer-events: none; 
+}
+
+/* Prevenir sobreescrituras y mejorar la legibilidad */
+
+/* Asegurar que los textos no se sobrepongan. */
+h1, h2, h3, p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Mejorar contraste para textos sobre imágenes. */
+.absolute {
+    /* Z-index base para elementos absolutos. */
+    z-index: 5; 
+}
+
+/* Aumentar z-index para elementos específicos. */
+.z-10 {
+    z-index: 10;
+}
+
+.z-20 {
+    z-index: 20;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+/* Asegurar que los elementos flotantes no se sobrepongan. */
+.float-element, .float-element-reverse {
+    z-index: 20;
+}
+
+/* Mejorar visibilidad de textos sobre imágenes. */
+.bg-gradient-to-t {
+    /* Aplica un gradiente oscuro para mejorar el contraste. */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
+}
+
+/* Asegurar que los textos en tarjetas sean legibles. */
+.group:hover .group-hover\:text-red-600 {
+    /* Fuerza el color del texto en hover. */
+    color: #dc2626 !important; 
+}
+
+/* Evitar que los textos se corten. */
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+/* Mejorar espaciado entre secciones. */
+.pt-16 {
+    padding-top: 4rem !important;
+}
+
+/* Mejorar contraste de fondos. */
+.bg-black\/80, .bg-black\/90 {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Asegurar que las imágenes de fondo no interfieran con el texto. */
+.object-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Mejorar transiciones. */
+.transition-colors {
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Mejorar contraste para textos sobre gradientes. */
+.from-black\/90.via-black\/60.to-transparent {
+    /* Gradiente con mayor opacidad inicial para mejor legibilidad. */
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(0, 0, 0, 0.8) 30%, 
+        rgba(0, 0, 0, 0.5) 60%, 
+        rgba(0, 0, 0, 0.2) 80%,
+        transparent 100%
+    );
+}
+
+/* Mejorar visibilidad de elementos superpuestos. */
+.backdrop-blur-sm {
+    /* Aplica un efecto de desenfoque al fondo. */
+    backdrop-filter: blur(8px);
+}
+
+/* Asegurar que los botones sean siempre visibles. */
+.fixed {
+    position: fixed !important;
+}
+
+/* Mejorar espaciado interno de elementos. */
+.p-4 {
+    padding: 1rem !important;
+}
+
+.p-6 {
+    padding: 1.5rem !important;
+}
+
+/* Asegurar que los bordes sean visibles. */
+.border {
+    border-width: 1px !important;
+}
+
+.border-2 {
+    border-width: 2px !important;
+}
+
+/* Mejorar visibilidad de textos pequeños. */
+.text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+}
+
+.text-sm {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+}
+
+/* Asegurar que los elementos de fondo no interfieran. */
+.opacity-20 {
+    opacity: 0.2 !important;
+}
+
+/* Ajustes para dispositivos móviles. */
+@media (max-width: 768px) {
+    /* Oculta elementos que pueden causar sobreposición en móviles. */
+    .float-element, .float-element-reverse {
+        display: none;
+    }
+    
+    /* Ajusta tamaños de texto para evitar sobreposiciones en móviles. */
+    .text-3xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .text-lg {
+        font-size: 1rem !important;
+    }
+    
+    /* Aumenta el contraste en móviles. */
+    .bg-gradient-to-t {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+    }
+    
+    /* Ajusta el espaciado en móviles. */
+    .p-6 {
+        padding: 1rem !important;
+    }
+    
+    .gap-8 {
+        gap: 1rem !important;
+    }
+    
+    .space-y-16 {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Mejora la visibilidad de elementos en móviles. */
+    .shadow-glow {
+        box-shadow: 0 0 10px rgba(220, 38, 38, 0.4) !important;
+    }
+    
+    /* Ajusta el tamaño de las imágenes en móviles. */
+    .h-\[250px\] {
+        height: 200px !important;
+    }
+    
+    /* Mejora el contraste de textos en móviles. */
+    .text-gray-300, .text-gray-400 {
+        color: #d1d5db !important;
+    }
+}
+
+/* Animación para partículas. */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes floatParticle {
+    /* Define el movimiento de flotación de las partículas. */
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(10px, 10px);
+    }
+    50% {
+        transform: translate(20px, 0px);
+    }
+    75% {
+        transform: translate(10px, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Asegurar que los elementos interactivos sean accesibles. */
+button, a {
+    position: relative;
+    z-index: 10;
+}
+
+/* Mejorar contraste de elementos activos. */
+button:focus, a:focus {
+    /* Resalta los elementos al enfocarlos. */
+    outline: 2px solid rgba(220, 38, 38, 0.5);
+    outline-offset: 2px;
+}
